@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -56,6 +57,12 @@ public class WeatherViewerActivity extends AppCompatActivity {
                 // get text from locationEditText and create web service URL
                 EditText locationEditText =
                         (EditText) findViewById(R.id.locationEditText);
+
+                if (locationEditText.getText() == null || "".equals(locationEditText.getText()) || locationEditText.getText().length() == 0) {
+                    Toast.makeText(getApplicationContext(), "please input city name.", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
                 URL url = createURL(locationEditText.getText().toString());
 
                 // hide keyboard and initiate a GetWeatherTask to download
