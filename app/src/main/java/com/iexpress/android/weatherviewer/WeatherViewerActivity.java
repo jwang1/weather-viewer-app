@@ -59,7 +59,7 @@ public class WeatherViewerActivity extends AppCompatActivity {
                         (EditText) findViewById(R.id.locationEditText);
 
                 if (locationEditText.getText() == null || "".equals(locationEditText.getText()) || locationEditText.getText().length() == 0) {
-                    Toast.makeText(getApplicationContext(), "please input city name.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "PLEASE INPUT CITY NAME.", Toast.LENGTH_LONG).show();
                     return;
                 }
 
